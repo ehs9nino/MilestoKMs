@@ -32,6 +32,22 @@
     <div class="container bottom" id="answer">
     	<h2 class="invisible">Answer goes here</h2>
     </div>
-	
+	<script>
+		var form= document.getElementById('convert').addEventListener('submit',function(event){
+			event.preventDefault();
+			var distance=parseFloat(document.getElementById('distance').value);
+			var answer=document.getElementById('answer');
+			if (distance){
+				//convert
+				var conversion=(distance*1.609344).toFixed(3);
+				//display
+				var answer=document.getElementById('answer');
+				answer.innerHTML=`<h2>Distance Miles converts to ${conversion} Kilometers</h2>`;
+			}
+			else{
+				answer.innerHTML='<h2>Please provide the numbers</h2>';
+			}
+		});
+	</script>
 </body>
 </html>
